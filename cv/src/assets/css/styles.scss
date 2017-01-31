@@ -1,0 +1,117 @@
+$spacing : 15px;
+$colorsec: #0b70bd;
+
+h1,h2,h3{
+    padding:0px;
+    margin:0px;
+}
+
+body {
+    background:#dadada;
+    font-family: 'Lato', sans-serif;
+    color:#444;
+    font-size:0.9em;
+}
+
+h1{
+    font-size:1.4em;
+}
+
+h1 span{
+    font-weight:normal;
+    font-size:1em;
+}
+
+h2{
+    font-size:1.1em;
+    color:$colorsec;
+    border-bottom: solid 2px $colorsec;
+}
+
+h3{
+    font-size:1em;
+}
+
+main{
+    max-width:800px;
+    display:flex;
+    flex-flow: row wrap;
+    margin:0 auto;
+    background:#FFF;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+header{
+    width:100%;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:space-between;
+    align-items: center;
+    color:#FFF;
+    padding:$spacing;
+    background:#406b8c;
+}
+
+.contact1,.contact2{
+    color:#c7c7c7;
+}
+
+header * {
+   flex-shrink:1;
+}
+
+photo {
+    width:100px;
+    height:100px;
+    background:#ccc;
+}
+
+#competences{
+    width:30%;
+}
+
+ul{
+    padding:0px;
+    margin:0px;
+    list-style: none;    
+}
+
+#competences ul li{
+    padding:0px;
+    margin:2px 0px 0px 0px;
+    height:20px;
+}
+
+#competences ul li progress {
+    width:60px;
+    float:right;
+    height:5px;
+    margin:7px 0px 0px 0px;
+}
+
+
+#experience{
+    width:70%;
+}
+
+article{
+    margin:0px $spacing;
+    padding:$spacing 0px 0px 0px;
+}
+
+article p{
+    padding:0px;
+    margin:$spacing 0px 0px 0px;
+}
+
+section{
+    padding:$spacing 0px 0px 0px;
+}
+
+span.lieu {
+    color:$colorsec;
+    font-weight:normal;
+}
+span.norm{
+    font-weight:normal;
+}

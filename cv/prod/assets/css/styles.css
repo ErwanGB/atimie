@@ -1,0 +1,132 @@
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: .9em;
+  color: #444;
+  background: #dadada;
+}
+
+h1 {
+  font-size: 1.4em;
+}
+
+h1 span {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 1.1em;
+  color: #0b70bd;
+  border-bottom: solid 2px #0b70bd;
+}
+
+h3 {
+  font-size: 1em;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .19), 0 6px 6px rgba(0, 0, 0, .23);
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 15px;
+  color: #fff;
+  background: #406b8c;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact1,
+.contact2 {
+  color: #c7c7c7;
+}
+
+header * {
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+}
+
+photo {
+  width: 100px;
+  height: 100px;
+  background: #ccc;
+}
+
+#competences {
+  width: 30%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#competences ul li {
+  height: 20px;
+  margin: 2px 0 0 0;
+  padding: 0;
+}
+
+#competences ul li progress {
+  float: right;
+  width: 60px;
+  height: 5px;
+  margin: 7px 0 0 0;
+}
+
+#experience {
+  width: 70%;
+}
+
+article {
+  margin: 0 15px;
+  padding: 15px 0 0 0;
+}
+
+article p {
+  margin: 15px 0 0 0;
+  padding: 0;
+}
+
+section {
+  padding: 15px 0 0 0;
+}
+
+span.lieu {
+  font-weight: normal;
+  color: #0b70bd;
+}
+
+span.norm {
+  font-weight: normal;
+}
