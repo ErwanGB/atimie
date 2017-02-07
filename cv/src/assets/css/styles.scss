@@ -1,3 +1,4 @@
+$mobspacing : 5px;
 $spacing : 15px;
 $colorsec: #0b70bd;
 
@@ -6,20 +7,54 @@ h1,h2,h3{
     margin:0px;
 }
 
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+a:hover{
+    text-decoration:underline;
+    color:inherit;
+}
+
 body {
     background:#dadada;
     font-family: 'Lato', sans-serif;
     color:#444;
     font-size:0.9em;
+    padding:0px;
+    margin:0px;
+}
+
+.icon-star,.icon-star-empty{
+    padding:2px;
+    color:#ccc;
+}
+
+.icon-star{
+    color:#FFD90D;
+}
+
+#competences,#experience{
+    width:100%;
+}
+
+#experience{
+    order:1;
+}
+
+#competences{
+    order:2;
 }
 
 h1{
     font-size:1.4em;
+    padding:0px 0px 0px $spacing;
 }
 
 h1 span{
     font-weight:normal;
-    font-size:1em;
+    font-size:0.9em;
 }
 
 h2{
@@ -39,79 +74,152 @@ main{
     margin:0 auto;
     background:#FFF;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    padding-bottom:50px;
 }
 
 header{
     width:100%;
     display:flex;
     flex-flow:row wrap;
-    justify-content:space-between;
     align-items: center;
     color:#FFF;
-    padding:$spacing;
+    padding:$mobspacing;
     background:#406b8c;
 }
 
-.contact1,.contact2{
+header i{
+    margin-right:5px;
+}
+
+
+div.contact {
+    display:flex;
+    flex-flow:row wrap;
     color:#c7c7c7;
+    width:100%;
+    justify-content: space-between;
+}
+
+div.contact div{
+    margin-top:10px;
 }
 
 header * {
    flex-shrink:1;
 }
 
-photo {
-    width:100px;
-    height:100px;
-    background:#ccc;
-}
-
-#competences{
-    width:30%;
-}
-
 ul{
     padding:0px;
     margin:0px;
-    list-style: none;    
+    list-style: none; 
+   
+}
+
+.professionnelles span{
+    margin-left:5px;
+}
+
+#competences ul{
+    display:flex;
+    flex-flow: row wrap;
+    justify-content:space-between;
 }
 
 #competences ul li{
     padding:0px;
-    margin:2px 0px 0px 0px;
-    height:20px;
+    font-weight:bold;
+    margin:2px 0px;
 }
 
-#competences ul li progress {
-    width:60px;
-    float:right;
-    height:5px;
-    margin:7px 0px 0px 0px;
-}
-
-
-#experience{
-    width:70%;
+#competences ul li div{
+    width:130px;
 }
 
 article{
-    margin:0px $spacing;
-    padding:$spacing 0px 0px 0px;
+    margin:0px $mobspacing;
+    padding:$mobspacing 0px 0px 0px;
+    clear:both;
 }
 
 article p{
     padding:0px;
-    margin:$spacing 0px 0px 0px;
+    margin:$mobspacing 0px 0px 0px;
 }
 
 section{
-    padding:$spacing 0px 0px 0px;
+    padding:$mobspacing 0px 0px 0px;
 }
 
 span.lieu {
     color:$colorsec;
     font-weight:normal;
 }
+
 span.norm{
     font-weight:normal;
+}
+
+@media all and (min-width:800px){
+
+header{
+    padding:$spacing;
+}
+
+article,section{
+    padding:$spacing 0px 0px 0px;
+}
+
+article{
+    margin:0px $spacing;
+}
+
+article p{
+    margin:$spacing 0px 0px 0px;
+}
+
+h1{
+     padding:0px 100px 0px $spacing;
+}
+
+body{
+    padding:20px 0px 100px 0px;
+}
+
+div.contact div{
+    margin-left:20px;
+    margin-top:5px;
+    width:155px;
+}
+div.contact{
+    width:350px;
+}
+
+#competences ul{
+    display:block;
+}
+
+#competences ul li {
+    display:flex;
+    padding:5px 0px;
+    margin:0px;
+}
+
+#competences ul li div{
+    padding:0px;
+    font-weight:bold;
+}
+
+#competences{
+    width:30%;
+    order:1;
+}
+
+#experience{
+    width:70%;
+    order:2;
+}
+}
+
+@media print{
+ h1{font-size:10px;}
 }

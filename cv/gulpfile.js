@@ -50,7 +50,7 @@ gulp.task('build', ['css']);
 // Tâche "prod" = Build + minify
 gulp.task('prod', ['build',  'minify']);
 
-// Tâche "watch" = je surveille *less
+// Tâche "watch" = je surveille *scss
 gulp.task('watch', function () {
     browserSync.init({
         server: prod
