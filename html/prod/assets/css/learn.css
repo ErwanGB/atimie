@@ -1,0 +1,161 @@
+.rond {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #f00;
+}
+
+.rectangle {
+  width: 60px;
+  height: 60px;
+  background-color: #0f0;
+}
+
+body {
+  background: #eee;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  clear: both;
+  min-height: 600px;
+  margin: 0;
+  padding: 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+}
+
+#main > article {
+  padding: 5px;
+    /*    $key: random(length($colors));
+    background : nth($colors,$key);*/
+  background: rgb(235,151,154);
+  -webkit-box-flex: 3;
+      -ms-flex: 3 1 60%;
+          flex: 3 1 60%;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
+#main > aside {
+  padding: 5px;
+    /*    $key: random(length($colors));
+    background : nth($colors,$key);*/
+  background: rgb(87,72,148);
+  -webkit-box-flex: 1;
+      -ms-flex: 1 6 40%;
+          flex: 1 6 40%;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+header,
+footer {
+  display: block;
+  min-height: 100px;
+  padding: 5px;
+    /*    $key: random(length($colors));
+    background : nth($colors,$key);*/
+  background: rgb(59,75,110);
+}
+
+nav {
+  display: block;
+  width: 100%;
+    /*    $key: random(length($colors));
+    background : nth($colors,$key);*/
+  background: rgb(10,172,36);
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+nav ul li {
+  padding: 3px 0;
+  text-align: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+li.menu1 {
+    /*    $key: random(length($colors));
+    background : nth($colors,$key);*/
+  background: rgb(182,59,175);
+}
+
+li.menu2 {
+    /*    $key: random(length($colors));
+    background : nth($colors,$key);*/
+  background: rgb(202,15,188);
+}
+
+li.menu3 {
+    /*    $key: random(length($colors));
+    background : nth($colors,$key);*/
+  background: rgb(189,211,71);
+}
+
+li.menu4 {
+    /*    $key: random(length($colors));
+    background : nth($colors,$key);*/
+  background: rgb(98,188,203);
+}
+
+li.menu5 {
+    /*    $key: random(length($colors));
+    background : nth($colors,$key);*/
+  background: rgb(139,56,143);
+}
+
+li.menu6 {
+    /*    $key: random(length($colors));
+    background : nth($colors,$key);*/
+  background: rgb(236,167,222);
+}
+
+/* Too narrow to support three columns */
+@media all and (max-width: 640px) {
+  #main,
+    #page {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  #main > article,
+    #main > nav,
+    #main > aside {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+  }
+
+  #main > nav,
+    #main > aside,
+    header,
+    footer {
+    min-height: 50px;
+    max-height: 50px;
+  }
+}

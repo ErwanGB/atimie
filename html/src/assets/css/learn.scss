@@ -1,0 +1,135 @@
+//$larg-menu : percentage(1/6);
+$color1 : #F15D59;
+$color2 : #363634;
+$color3 : #84BF17;
+$color4 : #A68F59;
+$color5 : #dcddcd;
+$colors : $color1,$color2,$color3,$color4,$color5;
+
+@mixin form($color,$taille,$forme){
+    background-color:$color;
+    width:$taille;
+    height:$taille;
+    @if $forme == "rond"{
+        border-radius: 50%;
+    }
+}
+
+.rond{
+    @include form(#F00,50px,rond)
+}
+
+.rectangle{
+    @include form(#0f0,60px,rectangle)
+}
+
+@mixin background(){    
+/*    $key: random(length($colors));
+    background : nth($colors,$key);*/
+    $red: random(256)-1;
+    $green: random(256)-1;
+    $blue: random(256)-1;
+    background : unquote("rgb(" + $red + "," + $green + "," +$blue + ")");
+}
+
+body{
+    background:#eee;
+}
+
+ul{
+    list-style:none;
+    padding:0px;
+    margin:0px;
+}
+
+#main {
+    display: flex;
+    min-height: 600px;
+    margin: 0;
+    padding: 0;
+    flex-flow: row;
+    clear:both;
+}
+
+#main > article {
+
+    padding: 5px;
+    @include background();
+    flex: 3 1 60%;
+    order: 1;
+}
+
+
+#main > aside {
+    padding: 5px;
+    @include background();
+    flex: 1 6 40%;
+    order: 2;
+}
+
+header,
+footer {
+    display: block;
+    min-height: 100px;
+    padding: 5px;
+    @include background();
+}
+
+nav{
+    display:block;
+    @include background();
+    width:100%;
+}
+
+nav ul{
+    display:flex;
+    flex-flow:row nowrap;
+}
+
+nav ul li{
+    padding:3px 0px;
+    flex-grow:1;
+    text-align:center;
+}
+
+li.menu1{
+    @include background();
+}
+li.menu2{
+    @include background();
+}
+li.menu3{
+    @include background();
+}
+li.menu4{
+    @include background();
+}
+li.menu5{
+    @include background();
+}
+li.menu6{
+    @include background();
+}
+
+/* Too narrow to support three columns */
+@media all and (max-width: 640px) {
+  #main,
+    #page {
+    flex-direction: column;
+  }
+
+  #main > article,
+    #main > nav,
+    #main > aside {
+    order: 0;
+  }
+
+  #main > nav,
+    #main > aside,
+    header,
+    footer {
+    min-height: 50px;
+    max-height: 50px;
+  }
+}
+

@@ -20,7 +20,7 @@ gulp.task('css', function () {
     .pipe(gulp.dest(prod + '/assets/css/'));
 });
 
-// Tâche html / Copie simple dans prod
+// Tâche html / Copie simple dans prod.
 gulp.task('html',function(){
     return gulp.src(source + '/*.html')
     .pipe(gulp.dest(prod))    
@@ -50,7 +50,7 @@ gulp.task('build', ['css']);
 // Tâche "prod" = Build + minify
 gulp.task('prod', ['build',  'minify']);
 
-// Tâche "watch" = je surveille *less
+// Tâche "watch" = je surveille *scss
 gulp.task('watch', function () {
     browserSync.init({
         server: prod
