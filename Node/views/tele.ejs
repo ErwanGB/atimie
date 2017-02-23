@@ -1,0 +1,26 @@
+<html>
+<head>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Nom</th>
+            <th>Adresse</th>
+            <th>Code Postal</th>
+            <th>Ville</th>
+            <th>Téléphone</th>
+            <th>Payante</th>
+        </tr>         
+        <% for (var item of chaine){%>
+           <tr> 
+                <td><%= item.nom_chaine %> </td>
+                <td><%= item.adresse %> </td>
+                <td><%= item.code_postal %> </td>
+                <td><%= item.ville %> </td>
+                <td><%= item.telephone %> </td>
+                <td><%= item.payante %> </td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>

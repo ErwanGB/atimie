@@ -1,0 +1,45 @@
+<! DOCTYPE HTML>
+<head>
+    <% include partials/head %>
+</head>
+<body>
+    <div id="container">
+    <% include partials/header %>
+        <div id="main">
+            <table>
+                <tr>
+                    <th>Nom</th>
+                    <th>Adresse</th>
+                    <th>Code Postal</th>
+                    <th>Ville</th>
+                    <th>Téléphone</th>
+                    <th>Payante</th>
+                </tr>         
+                <% for (var item of chaine){%>
+                <tr> 
+                        <td><%= item.nom_chaine %> </td>
+                        <td><%= item.adresse %> </td>
+                        <td><%= item.code_postal %> </td>
+                        <td><%= item.ville %> </td>
+                        <td><%= item.telephone %> </td>
+                        <td><%= item.payante %> </td>
+                    </tr>
+                <% } %>
+            </table>
+            <div>
+                <form method="GET" action="/chaine/all" >
+                    <ul>
+                        <li><input type="text" name="nom_chaine" ></input></li>
+                        <li><input type="text" name="adresse" ></input></li>
+                        <li><input type="text" name="code_postal" ></input></li>
+                        <li><input type="text" name="ville" ></input></li>
+                        <li><input type="text" name="telephone" ></input></li>
+                        <li><input type="text" name="payante" ></input></li>
+                        <li><input type="submit" value="Ajouter"></input></li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

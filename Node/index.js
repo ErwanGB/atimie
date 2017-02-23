@@ -1,9 +1,13 @@
-var sequelize = new Sequelize('postgres://postgres:postgres@localhost:5432/mlcb');
-
 var express = require('express');
 var app = express();
+var Sequelize = require('sequelize');
+var sequelize = new Sequelize('postgresql://postgres:postgres@localhost:5432/tele', {
+   dialect: 'postgres'
+})
 
 app.use(express.static('public'));
+
+app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
     res.setHeader('Content-Type', 'text/plain');
@@ -13,7 +17,13 @@ app.get('/', function(req, res) {
 app.get('/article/:article', function(req, res) {
     var noms = ["james","lars","kirk","robert"]
     res.render('article.ejs', {article: req.params.article, noms});
+});
 
+app.get('/tele/all', function(req, res) {
+    var Chaine = sequelize.import(__dirname + "/models/chaine.js");
+    Chaine.findAll().then(function(chaine) {
+        res.render('tele',{chaine});
+    });
 });
 
 app.get('/cv', function(req, res) {
@@ -25,22 +35,5 @@ app.get('/cv', function(req, res) {
                 ];
     res.render('cv.ejs', {star})
 });
-
-app.get('/db',function(res,res){
-    var User = sequelize.define('user', {
-    firstName: {
-        type: Sequelize.STRING,
-        field: 'firstname' // Will result in an attribute that is firstName when user facing but first_name in the database
-    },
-    lastName: {
-        type: Sequelize.STRING,
-        field:'lastname'
-    }
-}, {
-    freezeTableName: true // Model tableName will be the same as the model name
-    });
-    res.render('db.ejs',{User})
-});
-
 
 app.listen(8888);
