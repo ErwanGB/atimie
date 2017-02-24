@@ -1,0 +1,50 @@
+<! DOCTYPE HTML>
+<head>
+    <% include partials/head %>
+</head>
+<body>
+    <div id="container">
+    <% include partials/header %>
+        <div id="main">
+            <table>
+                <tr>
+                    <th>Id</th>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Delete</th>
+                </tr>         
+                <% for (var item of membre){%>l
+                <tr> 
+                        <td><%= item.id %></td>
+                        <td><%= item.firstname %> </td>
+                        <td><%= item.lastname %> </td>
+                        <td><a href='/membre/del?id=<%= item.id %>'>Delete</a></td>
+                    </tr>
+                <% } %>
+                <form method="GET" action="/membre/add" >
+                    <tr>
+                        <td></td>
+                        <td><input type="text" name="firstname" ></input></td>
+                        <td><input type="text" name="lastname" ></input></td>
+                        <td><input type="submit" value="Ajouter"></input></td>
+                    </tr>
+                </form>                
+            </table>
+            <div>
+                Ajouter
+                
+                   
+                Modifier
+                <form method="GET" action="/membre/up" >
+                    <ul>
+                        <li><input type="text" name="id" >id</input></li>
+                        <li><input type="text" name="firstname" >firstname</input></li>
+                        <li><input type="text" name="lastname" >lastname</input></li>
+                        <li><input type="submit" value="Modifier"></input></li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
