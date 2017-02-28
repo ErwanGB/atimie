@@ -1,23 +1,23 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('livre', {
+  return sequelize.define('membre', {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true
     },
-    title: {
+    firstname: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    author: {
+    lastname: {
       type: DataTypes.STRING,
       allowNull: true
     }
   }, {
-    tableName: 'livre',
+    tableName: 'membre',
     timestamps: false
   });
 };

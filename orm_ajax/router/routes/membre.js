@@ -5,8 +5,8 @@ module.exports = (app, db) => {
     // Tous les membres
     app.get('/membre', (req, res) => {
 
-        db.membre.findAll().then(membre => {
-            res.render('membre',{membre});
+        db.membre.findAll().then(allmembres => {
+            res.render('membre',{allmembres});
         });
     });
 
