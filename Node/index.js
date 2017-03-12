@@ -1,9 +1,5 @@
 var express = require('express');
 var app = express();
-var Sequelize = require('sequelize');
-var sequelize = new Sequelize('postgresql://postgres:postgres@localhost:5432/tele', {
-   dialect: 'postgres'
-})
 
 app.use(express.static('public'));
 
@@ -17,13 +13,6 @@ app.get('/', function(req, res) {
 app.get('/article/:article', function(req, res) {
     var noms = ["james","lars","kirk","robert"]
     res.render('article.ejs', {article: req.params.article, noms});
-});
-
-app.get('/tele/all', function(req, res) {
-    var Chaine = sequelize.import(__dirname + "/models/chaine.js");
-    Chaine.findAll().then(function(chaine) {
-        res.render('tele',{chaine});
-    });
 });
 
 app.get('/cv', function(req, res) {

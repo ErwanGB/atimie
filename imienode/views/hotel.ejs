@@ -1,0 +1,18 @@
+<html>
+<head>
+</head>
+<body>
+<table>
+
+    <% for (var item of data){ %>
+        <tr>
+            <td><%= item.fields.nom_commercial %></a></td>
+            <td><%= item.fields.commune %></td>
+            <td><%= item.fields.classement %></td>
+            <td><a href="/ville/<%= item.fields.code_postal%>/hotels"><%= item.fields.code_postal %></a></td>
+        </tr>
+    <% } %>
+
+</table>
+</body>
+</html>

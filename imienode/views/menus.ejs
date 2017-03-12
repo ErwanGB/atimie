@@ -1,0 +1,23 @@
+
+
+<html>
+<head>
+</head>
+<body>
+<table>
+
+    <% for (var item in datajs){ 
+        console.log(item);
+        
+        %>
+        <tr>
+            <td><%= item.date %></a></td>
+            <td><%= item.repas %></td>
+            <td><%= item.commune %></td>
+            <td><%= item.type_repas %></td>
+        </tr>
+    <% } %>
+
+</table>
+</body>
+</html>

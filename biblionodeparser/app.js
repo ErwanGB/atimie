@@ -19,7 +19,7 @@ app.use(express.static('public'));
 
 
 
-
+// Permet d'omettre le .ejs quand on déclare les vues.
 app.set('view engine', 'ejs');
 
 app.use((req, res, next) => {
