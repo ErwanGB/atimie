@@ -24,10 +24,15 @@ mongodb.connect("mongodb://localhost:27017/hotels", function(err,db){
     if(err){console.log("Erreur : "  + err)};
     var collection = db.collection('hotels');
     var comments = db.collection('comments');
+
+    app.get('/', function(req, res) {
+            res.render('index');  
+    });    
      
     app.get('/hotels', function(req, res) {
         collection.find().toArray(function(err, data) {
-            res.render('hotelsmongo', {data});  
+            //res.render('hotelsmongo', {data}); 
+            res.json(data);
         })
     });
 
@@ -55,9 +60,25 @@ mongodb.connect("mongodb://localhost:27017/hotels", function(err,db){
                         }
             }]).toArray(function(err, data) {
             data = data[0];
-            //res.render('statistiques', {data});           
-            res.json(data);
+            res.render('statistiques', {data});           
+            //res.json(data);
         })
+    });
+
+    app.get('/hotels/:codepostal/statistiques/moyenne', function (req, res) {
+        collection.aggregate(
+            [{ $match: { 'fields.code_postal': parseInt(req.params.codepostal) } },
+            {
+                $group: {
+                    _id: '$fields.code_postal',
+                    total: {
+                        $avg: '$fields.note'
+                    }
+                }
+            }]).toArray(function (err, data) {
+                data = data[0];
+                res.render('statistiques', {data});           
+            })
     });
 
     app.get('/hotel/:id/comment',function(req,res){

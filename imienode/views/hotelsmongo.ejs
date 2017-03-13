@@ -10,7 +10,8 @@
             <td><%= item.fields.classement %></td>
             <td><%= item.fields.capacite_d_accueil_personnes %></td>
             <td><a href="/ville/<%= item.fields.code_postal%>/hotels %>"><%= item.fields.code_postal %></a></td>
-            <td><td><a href="/hotels/<%= item.fields.code_postal%>/statistiques/capacite %>">Capacite CP</a></td></td>
+            <td><td><a href="/hotels/<%= item.fields.code_postal%>/statistiques/capacite %>">Capacite</a></td></td>
+            <td><td><a href="/hotels/<%= item.fields.code_postal%>/statistiques/moyenne %>">Moyenne</a></td></td>
         </tr>
     <% } %>
 
