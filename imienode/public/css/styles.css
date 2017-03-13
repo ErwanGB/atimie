@@ -6,6 +6,10 @@ h3 {
   font-size:1em;
 }
 
+h1{
+  font-weight:bold;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -20,17 +24,15 @@ a:hover {
 body {
   background-color:#cccccc;
   font-family:Arial, Helvetica, sans-serif;
-  color:#333;
+  color:#555;
 }
 
 #container{
   width:900px;
   background:#FFF;
   margin:auto;
-}
-
-#main{
-  padding:20px;
+  min-height:300px;
+  padding:30px 0px;
 }
 
 header{
@@ -38,4 +40,36 @@ header{
   color:#FFF;
   padding:10px 30px;
 }
+
+.icon-star {
+  color: #ffd90d;
+}
+
+table{
+  border:1px solid #e5eff8;
+  width:90%;
+  margin:auto;
+}
+
+table tr td{
+  text-transform: lowercase;
+  border:1px solid #e5eff8;
+  padding:5px;
+
+}
+
+table tr:nth-child(odd){
+  background:#f8faff;
+}
+
+table tr td:first-letter{
+  text-transform : uppercase
+}
+
+article {
+  width:90%;
+  margin:auto;
+}
+
+
 

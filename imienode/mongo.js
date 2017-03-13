@@ -39,7 +39,8 @@ mongodb.connect("mongodb://localhost:27017/hotels", function(err,db){
     app.get('/hotel/:id', function(req, res) {
         collection.find({'recordid':req.params.id}).toArray(function(err, data) {
             data = data[0];
-            res.render('fichehotel', {data});
+            //res.render('fichehotel', {data});
+            res.json(data);
         })
     });
 
