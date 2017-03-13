@@ -5,16 +5,19 @@
 <table>
     <ul>
 
-        <li><%= hotel.fields.nom_commercial %></li>
-        <li><%= hotel.fields.adresse %></li>
-        <li><%= hotel.fields.code_postal %></li>
-        <li><%= hotel.fields.dept %></li>
-        <li><%= hotel.fields.commune %></li>
-        <li><%= hotel.fields.capacite_d_accueil_personnes %></li>
-        <li><%= hotel.fields.nombre_de_chambres %></li>
-        <li><%= hotel.fields.telephone %></li>
-        <li><%= hotel.fields.site_internet %></li>                
+        <li><%= data.fields.nom_commercial %></li>
+        <li><%= data.fields.adresse %></li>
+        <li><%= data.fields.code_postal %></li>
+        <li><%= data.fields.dept %></li>
+        <li><%= data.fields.commune %></li>
+        <li><%= data.fields.capacite_d_accueil_personnes %></li>
+        <li><%= data.fields.nombre_de_chambres %></li>
+        <li><%= data.fields.telephone %></li>
+        <li><%= data.fields.site_internet %></li>   
+        <li>Lng : <%= data.fields.lng %> | Lat : <%= data.fields.lat %></li>             
    </ul>
+   <a href="/hotel/<%= data.recordid %>/comment">Poster un commentaire sur cet hôtel</a><br/>
+   <a href="/hotel/<%= data.recordid %>/comments">Voir les commentaires sur cet hôtel</a>
 </table>
 </body>
 </html>

@@ -1,0 +1,20 @@
+<html>
+<head>
+</head>
+<body>
+<table>
+<% for (var item of data){ %>
+    <div class="comment" style="padding:10px">
+        <p><%= item.hotelid %></p>
+        <p><%= item.auteur %></p>
+        <p><%= item.contenu %></p>
+        <p><%= item.date %></p>
+    </div>
+<% } %>
+<a href="/hotels">Retour à la liste des hôtels</a>
+</table>
+</body>
+</html>
+<!--
+hotelid,auteur,contenu,date
+-->

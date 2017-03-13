@@ -1,6 +1,6 @@
 var mongodb = require('mongodb').MongoClient;
 
-var arr = require('./hotels.json')
+var arr = require('./les_hotels_classes_en_ile-de-france.json')
 
 mongodb.connect("mongodb://localhost:27017/hotels", function(err,db){
 
