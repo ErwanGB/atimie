@@ -18,7 +18,6 @@ var mongodb = require('mongodb').MongoClient;
 var db;
 app.listen(8888);
 var hotels;
-var useJson = true
 
 mongodb.connect("mongodb://localhost:27017/hotels", function(err,db){
     if(err){console.log("Erreur : "  + err)};
@@ -29,46 +28,33 @@ mongodb.connect("mongodb://localhost:27017/hotels", function(err,db){
             var cp = 'all';
             var path = '';
             var front = 'hotels.js'
-            res.render('hotelsAjax',{front,path,cp});  
+            res.render('hotels',{front,path,cp});  
     });    
      
     app.get('/hotels', function(req, res) {
         collection.find().toArray(function(err, data) {
-            if(useJson){
-                res.json(data);
-                
-            }else{
-                res.render('hotelsmongo', {data}); 
-            }            
+            res.json(data);       
         })
     });
 
     app.get('/hotel/:id', function(req, res) {
         collection.find({'recordid':req.params.id}).toArray(function(err, data) {
             data = data[0];
-            if(useJson){
-                res.render('ficheHotelAjax', {data});
-            }else{
-                res.render('fichehotel', {data});
-            }             
+            res.render('ficheHotel', {data});           
         })
     });
 
     app.get('/ville/:codepostal/hotels',function(req,res){
         collection.find({"fields.code_postal":parseInt(req.params.codepostal)}).toArray(function(err, data) {
-            if(useJson){
-                res.json(data);                
-            }else{
-                res.render('hotelsmongo', {data});
-            }              
+            res.json(data);                            
         })
     });
 
     app.get('/hotels/:codepostal',function(req,res){
-                var cp = parseInt(req.params.codepostal);
-                var path = '../../';
-                var front = 'someHotels.js'
-                res.render('hotelsAjax', {path,front,cp});
+            var cp = parseInt(req.params.codepostal);
+            var path = '../../';
+            var front = 'someHotels.js'
+            res.render('hotels', {front,path,cp});
     });
 
     app.get('/hotels/:codepostal/statistiques/capacite',function(req,res){
@@ -82,11 +68,7 @@ mongodb.connect("mongodb://localhost:27017/hotels", function(err,db){
                         }
             }]).toArray(function(err, data) {
             data = data[0];
-            if(useJson){
-                res.json(data);                
-            }else{
-                res.render('statistiques', {data});           
-            } 
+            res.json(data);                
         })
     });
 
@@ -102,42 +84,26 @@ mongodb.connect("mongodb://localhost:27017/hotels", function(err,db){
                 }
             }]).toArray(function (err, data) {
                 data = data[0];
-                if(useJson){
-                    res.json(data);                
-                }else{
-                    res.render('statistiques', {data});           
-                }           
+                res.json(data);                        
             })
     });
 
-/*    app.get('/hotel/:id/comment',function(req,res){
-        res.json(data);
-    });
-*/
     app.get('/hotel/:id/comments',function(req,res){
         comments.find({'hotelid':req.params.id}).toArray(function(err,data){
-            if(useJson){
-                res.json(data);                
-            }else{
-                res.render('comments', {data});
-            }                         
+            res.json(data);                                       
         })
     });
 
     app.post('/hotel/:id/comment',function(req,res){
-        //var id = req.params.id;
-        
+
         var id = req.body.id;
         var auteur = req.body.auteur;
         var contenu = req.body.contenu;
         var date = new Date();   
   
         comments.insert({hotelid:id,auteur:auteur,contenu:contenu,date:date}).then(function(err,data){
-            if(useJson){
-                console.log("commentaire ajouté")
-            }else{
-                res.redirect('comments');
-            }     
+            console.log("commentaire ajouté")   
+            res.json(data);
         })
     });
 
