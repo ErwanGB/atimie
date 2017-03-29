@@ -15,13 +15,10 @@ module.exports = function(sequelize, DataTypes) {
     city_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      references: {
-        model: 'cities',
-        key: 'id'
-      }
     }
   }, {
     tableName: 'airports',
-    timestamps: false
+    timestamps: false,
+    underscored: true
   });
 };

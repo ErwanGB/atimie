@@ -3,7 +3,12 @@
 module.exports = (app, db) => {
   // GET all cities
   app.get('/cities', (req, res) => {
-    db.cities.findAll()
+    db.cities.findAll({
+      include:
+        {
+          model: db.airports
+        }
+    })
       .then(cities => {
         res.json(cities);
       });
@@ -13,7 +18,12 @@ module.exports = (app, db) => {
   app.get('/city/:id', (req, res) => {
     const id = req.params.id;
     db.cities.find({
-      where: { id: id}
+      where: { id: id},
+      include:
+        {
+          model: db.airports
+        }
+
     })
       .then(city => {
         res.json(city);

@@ -1,11 +1,7 @@
 'use strict'
 
 const routes = [
-  /*require('./routes/owners'),
-  require('./routes/pets')*/
-  require('./routes/cities'),
-  require('./routes/airports'),
-  require('./routes/flights')
+  require('./routes/routes')
 ];
 
 

@@ -15,18 +15,10 @@ module.exports = function(sequelize, DataTypes) {
     from_airport: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      references: {
-        model: 'airports',
-        key: 'id'
-      }
     },
     to_airport: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      references: {
-        model: 'airports',
-        key: 'id'
-      }
     },
     departure: {
       type: DataTypes.DATE,

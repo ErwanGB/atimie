@@ -1,2 +1,5 @@
- `npm install`
- `npm run dev`.
+Create Flights between airports 
+
+- PostgresSQL
+- Node / Express / Sequelize
+- React
